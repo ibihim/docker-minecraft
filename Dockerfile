@@ -9,4 +9,4 @@ RUN mkdir /minecraft && wget -q "https://launcher.mojang.com/v1/objects/3737db93
 WORKDIR /data
 RUN echo "eula=true" > /data/eula.txt
 
-CMD java -Xmx1024M -Xms1024M -jar /minecraft/minecraft_server.jar nogui
+CMD java -server -Xmx1024M -Xms1024M -XX:ParallelGCThreads=2 -jar /minecraft/minecraft_server.jar nogui
